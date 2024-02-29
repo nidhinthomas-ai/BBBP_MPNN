@@ -11,7 +11,7 @@ from rdkit import RDLogger
 from rdkit.Chem.Draw import IPythonConsole
 from rdkit.Chem.Draw import MolsToGridImage
 
-from utils import AtomFeaturizer, BondFeaturizer
+from bbbp_mpnn.utils import AtomFeaturizer, BondFeaturizer
 
 # Suppress TensorFlow logs and warnings for cleaner output
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"

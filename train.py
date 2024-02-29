@@ -1,3 +1,4 @@
+import os
 import argparse
 import numpy as np
 import pandas as pd
@@ -7,8 +8,8 @@ from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.callbacks import ModelCheckpoint
 
-from dataset import graphs_from_smiles, MPNNDataset
-from model import MPNNModel
+from bbbp_mpnn.dataset import graphs_from_smiles, MPNNDataset
+from bbbp_mpnn.model import MPNNModel
 
 def main():
     # Command-line argument parsing
@@ -22,8 +23,10 @@ def main():
     parser.add_argument('--learning_rate', type=float, default=5e-4, help='Learning rate for the optimizer')
     parser.add_argument('--epochs', type=int, default=40, help='Number of epochs to train for')
     parser.add_argument('--save_path', type=str, default="./", help='Path to save the model')
+    parser.add_argument('--cuda_device', type=str, default="0", help='CUDA device to use')
     args = parser.parse_args()
 
+    os.environ["CUDA_VISIBLE_DEVICES"] = args.cuda_device
     # Reading the dataset into a dataframe
     df = pd.read_csv(args.dataset, usecols=[1, 2, 3]) 
 
@@ -84,6 +87,7 @@ def main():
     plt.xlabel("Epochs")
     plt.ylabel("AUC")
     plt.legend()
+    plt.savefig("AUC.png")
     plt.show()
 
 if __name__ == "__main__":

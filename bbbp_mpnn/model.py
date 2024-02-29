@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
-from mpnn import MessagePassing, TransformerEncoderReadout
+from bbbp_mpnn.mpnn import MessagePassing, TransformerEncoderReadout
 
 def MPNNModel(
     atom_dim,

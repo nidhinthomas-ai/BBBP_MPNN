@@ -1,2 +1,2 @@
-# Blood Brain Barrier Penetration (BBBP) Prediction Using MPNN
+# Blood Brain Barrier Permeability (BBBP) Prediction Using MPNN
 
