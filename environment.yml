@@ -1,0 +1,17 @@
+name: mpnn_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8  # or any specific version you prefer
+  - pandas
+  - pillow
+  - matplotlib
+  - pydot
+  - scikit-learn
+  - pip
+  - pip:
+      - rdkit-pypi
+      - tensorflow
+      - keras
+      - graphviz
