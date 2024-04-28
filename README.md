@@ -56,7 +56,7 @@ python train.py --dataset data/BBBP.csv
 We can validate how the model performs for unseen data using **inference.py** file. Use the following command:
 
 ```
-python inference.py --dataset ./data/BBBP.csv --model_path ./mpnn_best_model.h5  --output_path ./bbbp_mpnn_pred
+python inference.py --dataset ./data/BBBP.csv --model_path ./model/mpnn_best_model.h5  --output_path ./bbbp_mpnn_pred
 ```
 
 ## Trained model:
